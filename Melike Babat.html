@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8b"/>
+      <title>Roma Rakamı Çevirici</title>
+</head>
+<body>
+
+     <h1>Melike Babat</h1>
+
+    <input
+          id="arabicSayisi"
+          type="text"
+          name="arabic"
+          placeholder="Arap Sayısını Giriniz"
+        />
+
+        <br />
+        <br />
+        <br />
+
+        <input
+          id="romanSayisi"
+          type="text"
+          name="roma"
+          value=""
+          placeholder="Roman Sayısını Giriniz"
+          />
+
+
+function toRoman(num) {
+    num = parseInt(num);
+
+    if (num > 3999) { alert('Sayi cok buyuk'); return false; }
+    if (num < 1) { alert('Sayi cok kucuk'); return false; }
+    
+        var result = '';
+        var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1], 
+        var roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']; 
+        for (var i = 0;i<=decimal.length;i++) {
+    while (num%decimal[i] < num) {     
+      result += roman[i];
+      num -= decimal[i];
+    }
+  }
+  return result;
+}
+
+function fromRoman(str) {
+  var result = 0;
+  var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+  for (var i = 0;i<=decimal.length;i++) {
+ while (str.indexOf(roman[i]) === 0){
+                         result += roman[i];
+                         str = str.replace(roman[i],'');
+    }
+  }
+  return result;
+}
+   
+
+    if (this - num || num < 1) num = 0;
+    if (num > 3999) return toBigRoman(num);
+
+    while (num) {
+        val = v[i];
+        while (num >= val) {
+            num -= val;
+            s += r[i];
+        }
+        ++i;
+    }
+    return result;
+}
+
+<script language="javascript" type="text/javascript">
+
+</body>
+</html>
